@@ -5,6 +5,6 @@ export const withdraw = amount => ({
 
 export const bankruptcy = totalAmount => ({
     type: "BANKRUPTCY",
-    payload: Number(totalAmount)
+    payload: totalAmount
 })
  

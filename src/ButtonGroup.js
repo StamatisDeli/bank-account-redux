@@ -23,13 +23,14 @@ const ButtonGroup = ({ withdraw }) => (
 )
 
 function dispatchBtnAction (e) {
- const amount = e.target.dataset.amount;
+ const amount = e.target.dataset.amount
  console.log("e-target", e.target.dataset.amount)
  store.dispatch(withdraw(amount));
 }
 
-function dispatchGiveAway () {
-  store.dispatch(bankruptcy())
+function dispatchGiveAway (totalAmount) {
+  totalAmount= store.getState().totalAmount
+  store.dispatch(bankruptcy(totalAmount))
 }
 
 export default ButtonGroup;

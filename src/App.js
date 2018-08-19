@@ -20,7 +20,7 @@ class App extends Component {
         <img className="App__userpic" src={photographer} alt="user" />
         <p className="App__username">Hello, {store.getState().username}! </p>
         <div className="App__amount">
-          {formatNumber({ prefix: "$" })(getTotalFromStore<0?"You owe us money!":getTotalFromStore==0?"No money in account":getTotalFromStore)}
+          {formatNumber({ prefix: "$" })(getTotalFromStore<0?"You owe us money!":getTotalFromStore===0?"No money in account":getTotalFromStore)}
           <p className="App__amount--info">Total Amount</p>
         </div>
 
