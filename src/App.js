@@ -14,18 +14,19 @@ class App extends Component {
   */
   render() {
     //const { totalAmount, username } = this.state;
+    const getTotalFromStore = store.getState().totalAmount
     return (
       <div className="App">
         <img className="App__userpic" src={photographer} alt="user" />
         <p className="App__username">Hello, {store.getState().username}! </p>
         <div className="App__amount">
-          {formatNumber({ prefix: "$" })(store.getState().totalAmount)}
+          {formatNumber({ prefix: "$" })(getTotalFromStore<0?"You owe us money!":getTotalFromStore==0?"No money in account":getTotalFromStore)}
           <p className="App__amount--info">Total Amount</p>
         </div>
 
         <section className="App__buttons">
           <ButtonGroup withdraw={
-            ["WITHDRAW $100,000","WITHDRAW $5,000"]
+            ["WITHDRAW $2500701","WITHDRAW $5,000"]
             }/>
           {/*<button data-amount="10000">WITHDRAW $10,000</button>*/}
           {/*<button data-amount="5000">WITHDRAW $5,000</button>*/}
